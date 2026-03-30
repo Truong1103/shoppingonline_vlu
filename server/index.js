@@ -22,7 +22,7 @@ app.use(
   express.static(path.resolve(__dirname, '../client-admin/build'))
 );
 
-app.get('/admin/*', (req, res) => {
+app.get('/admin/:path(*)', (req, res) => {
   res.sendFile(
     path.resolve(__dirname, '../client-admin/build', 'index.html')
   );
